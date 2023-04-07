@@ -60,7 +60,7 @@
     $_SESSION['user_name'] = $data['f_name'].' '.$data['l_name']; //user name
     $_SESSION['user_role'] = $data['role']; //user role
 
-    
+    //success message
     echo "Success";
     
   }

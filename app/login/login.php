@@ -118,11 +118,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     
                     console.log(response.responseText);
                     //redirect if successful
-                    if(response.responseText == "Success"){
+                    if(response.responseText.trim() == "Success"){
 
                         document.getElementById('success').style.display = "block";
                         $("#success").html(response.responseText);
-                        window.location = "../../index.php";
+                        window.location.replace("../../index.php");
                     }
                     else if(response.responseText == "Success(admin)"){
                         window.location = "../admin/";
