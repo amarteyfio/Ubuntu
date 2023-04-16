@@ -557,11 +557,11 @@ $events = select_group_events_ctrl($group_id);
                 // Callback handler that will be called on success
                 request.done(function(jqXHR, textStatus, response) {
                     
-                    console.log(response.responseText);
+                    console.log(response.responseText.trim());
                     //redirect if successful
-                    if(response.responseText == "Success"){
+                    if(response.responseText.trim() == "Success"){
 
-                        $("#success").html(response.responseText);
+                        $("#success").html(response.responseText.trim());
 
                         // Show the #success element and fade it out after 2 seconds
                         $("#success").fadeIn().delay(2000).fadeOut( function() {
@@ -581,7 +581,7 @@ $events = select_group_events_ctrl($group_id);
                     else
                     {
                       document.getElementById('error').style.display = "block";
-                      $("#error").html(response.responseText);
+                      $("#error").html(response.responseText.trim());
                     }
                     
                 });

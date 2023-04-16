@@ -116,21 +116,21 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 // Callback handler that will be called on success
                 request.done(function(jqXHR, textStatus, response) {
                     
-                    console.log(response.responseText);
+                    console.log(response.responseText.trim());
                     //redirect if successful
-                    if(response.responseText.trim() == "Success"){
+                    if(response.responseText.trim().trim() == "Success"){
 
                         document.getElementById('success').style.display = "block";
-                        $("#success").html(response.responseText);
+                        $("#success").html(response.responseText.trim());
                         window.location.replace("../../index.php");
                     }
-                    else if(response.responseText == "Success(admin)"){
+                    else if(response.responseText.trim() == "Success(admin)"){
                         window.location = "../admin/";
                     }   
                     else
                     {
                       document.getElementById('error').style.display = "block";
-                      $("#error").html(response.responseText);
+                      $("#error").html(response.responseText.trim());
                     }
                     
                 });

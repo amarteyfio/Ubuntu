@@ -772,11 +772,11 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                 // Callback handler that will be called on success
                 request.done(function(jqXHR, textStatus, response) {
                     
-                    console.log(response.responseText);
+                    console.log(response.responseText.trim());
                     //redirect if successful
-                    if(response.responseText == "Success"){
+                    if(response.responseText.trim() == "Success"){
 
-                        $("#done").html(response.responseText);
+                        $("#done").html(response.responseText.trim());
 
                         // Show the #success element and fade it out after 2 seconds
                         $("#done").fadeIn().delay(2000).fadeOut(function() {
@@ -788,7 +788,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                     else
                     {
                       document.getElementById('issue').style.display = "block";
-                      $("#issue").html(response.responseText);
+                      $("#issue").html(response.responseText.trim());
                       comp.disabled = false;
                     }
                     
@@ -837,11 +837,11 @@ $(document).ready(function() {
                 // Callback handler that will be called on success
                 request.done(function(jqXHR, textStatus, response) {
                     
-                    console.log(response.responseText);
+                    console.log(response.responseText.trim());
                     //redirect if successful
-                    if(response.responseText == "Success"){
+                    if(response.responseText.trim() == "Success"){
 
-                        $("#success").html(response.responseText);
+                        $("#success").html(response.responseText.trim());
 
                         // Show the #success element and fade it out after 2 seconds
                         $("#success").fadeIn().delay(2000).fadeOut(function() {
@@ -853,7 +853,7 @@ $(document).ready(function() {
                     else
                     {
                       document.getElementById('error').style.display = "block";
-                      $("#error").html(response.responseText);
+                      $("#error").html(response.responseText.trim());
                     }
                     
                 });

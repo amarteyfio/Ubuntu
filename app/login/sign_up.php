@@ -121,15 +121,15 @@
                     
                 
                     //redirect if successful
-                    if(response.responseText == "Success"){
+                    if(response.responseText.trim() == "Success"){
                         document.getElementById('success').style.display = "block";
-                        $("#success").html(response.responseText);
+                        $("#success").html(response.responseText.trim());
                         window.location = "login.php";
                     }
                     else
                     {   
                       document.getElementById('error').style.display = "block";
-                        $("#error").html(response.responseText);
+                        $("#error").html(response.responseText.trim());
                     }
                     
                 });
