@@ -99,6 +99,56 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
     <!---GG----->
     <link href="../../css/calendar.css" rel="stylesheet">
 
+    <!--- REPORT STYLING-->
+    <style>
+		h1 {
+			text-align: center;
+			color: #401f3e;
+			margin-top: 0;
+            border-bottom: 5px solid #e55467;
+            padding-bottom: 1em;
+		}
+
+		h2 {
+			color: #401f3e;
+		}
+
+		section {
+			margin: 2em 0;
+			padding: 1em;
+			background-color: #fff;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			border-left: 5px solid #e55467;
+		}
+
+		section + section {
+			border-left-color: #333;
+		}
+
+		dt {
+			font-weight: bold;
+			color: #401f3e;
+		}
+
+		dd {
+			margin-left: 1em;
+		}
+
+		p {
+			line-height: 1.5;
+		}
+
+		.report {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 1em;
+            color: #333;
+			font-family: Arial, sans-serif;
+            
+
+		}
+	</style>
+
 </head>
 
 <body>
@@ -360,7 +410,7 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
                         <li class="breadcrumb-item"><a href="../../index.php">Dashboard</a></li>
                         <li class="breadcrumb-item active"><a href="all_groups.php">Groups</a></li>
                         <li class="breadcrumb-item active"><a href="javascript:void(0)"><?php echo $group['group_name']; ?></a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Attendance</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Assessment Report</a></li>
                     </ol>
                 </div>
             </div>
@@ -377,57 +427,45 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
                     <div class = "col-lg-12" id="report">
                         <div class = "card">
                             <div class="card-body">
-                            <h2 class = "card-title">Assessment Report</h2>
-                            <div id = "report">
-                            <div class="media border-bottom-1 pt-3 pb-3">
-                                <div class="media-body">  
-                                    <h4> Overview </h4>
-                                    <p>Name: <?php echo $_SESSION['user_name']; ?></p>
-                                    <p>Email: <?php echo $user['email']; ?></p>
-                                    <p>Role: </p>
-                                    <p>Total Peer Assessment Score: <?php echo $total_assessment_score; ?></p>
-                                </div>
-                            </div>
-                            <div class="media border-bottom-1 pt-3 pb-3">
-                                <div class="media-body">  
-                                    <h4> Task Management </h4>
-                                    <p>Tasks Assigned: <?php echo $task_results['task_assigned']; ?></p>
-                                    <p>Tasks Comleted: <?php echo $task_results['task_completed']; ?></p>
-                                    <p>Task Completion Score: <?php echo $task_results['total_score']; ?>%</p>
-                                </div>
-                            </div>
-                            <div class="media border-bottom-1 pt-3 pb-3">
-                                <div class="media-body">  
-                                    <h4> Attendance Statistics </h4>
-                                    <p>Number of Group Meetings: <?php echo $meeting_results['meeting_count']; ?> </p>
-                                    <p>Times Present: <?php echo $meeting_results['attendance_count']; ?></p>
-                                    <p>Absent: <?php echo ($meeting_results['meeting_count'] - $meeting_results['attendance_count']); ?> </p>
-                                    <p>Attendance Score: <?php echo $meeting_results['total_score']; ?>%</p>
+                            <div class="report">
+                            <h1>Student Performance Report</h1>
 
-                                </div>
-                            </div>
-                            <div class="media border-bottom-1 pt-3 pb-3">
-                                <div class="media-body">  
-                                    <h4> Evaluation Form Results </h4>
-                                    <!--<p>Number of Assessments Made: 3 </p>-->
-                                    <p>Average Assessment Score: <?php echo $evaluation_score; ?>%</p>
-                                    <h5>Question Review</h5>
-                                    <!--<ul>
-                                        <li>Question 1 Average Score:</li>
-                                    </ul>-->
+                            <section>
+                            <h2>Student Overview</h2>
+                            <p><strong>Name:</strong> <?php echo $_SESSION['user_name']; ?></p>
+                            <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
+                            <p><strong>Group:</strong> <?php echo $group['group_name']; ?></p>
+                            <p><strong>Role:</strong> <?php echo select_user_role_ctrl($user_id, $group_id); ?></p>
+                            <p><strong>Total Peer Assessment Score:</strong> <?php echo $total_assessment_score; ?>%</p>
+                            </section>
 
-                                </div>
-                            </div>
-                            <div class="media border-bottom-1 pt-3 pb-3">
-                                <div class="media-body">  
-                                    <h4> Feedback </h4>
-                                    <?php foreach($feedback as $row):?>
-                                    <p class="blockquote"><?php echo $row; ?></p>
-                                    <?php endforeach;?>
+                            <section>
+                            <h2>Task Management</h2>
+                            <p><strong>Tasks Assigned:</strong> <?php echo $task_results['task_assigned']; ?></p>
+                            <p><strong>Tasks Completed:</strong> <?php echo $task_results['task_completed']; ?></p>
+                            <p><strong>Task Completion Score:</strong> <?php echo $task_results['total_score']; ?>%</p>
+                            </section>
 
-                                </div>
-                            </div>
-                            </div>
+                           <section>
+                           <h2>Meeting Attendance</h2>
+                           <p><strong>Number of Group Meetings:</strong> <?php echo $meeting_results['meeting_count']; ?></p>
+                            <p><strong>Times Present:</strong> <?php echo $meeting_results['attendance_count']; ?></p>
+                            <p><strong>Times Absent:</strong> <?php echo ($meeting_results['meeting_count'] - $meeting_results['attendance_count']); ?></p>
+                            <p><strong>Attendance Score:</strong> <?php echo $meeting_results['total_score']; ?>%</p>
+                           </section>
+
+                           <section>
+                            <h2>Peer Performance Survey Results</h2>
+                            <p><strong>Average Assessment Score:</strong> <?php echo $evaluation_score; ?>%</p>
+                            </section>
+
+                            <section>
+                            <h2>Feedback</h2>
+                            <?php foreach($feedback as $row):?>
+                            <p class="blockquote"><?php echo $row; ?></p>
+                            <?php endforeach;?>
+                            </section>
+	                        </div>
                         
 
 
