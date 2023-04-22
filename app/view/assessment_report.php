@@ -462,7 +462,7 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
                             <section>
                             <h2>Feedback</h2>
                             <?php foreach($feedback as $row):?>
-                            <p class="blockquote"><?php echo $row; ?></p>
+                            <blockquote><?php echo $row; ?></blockquote>
                             <?php endforeach;?>
                             </section>
 	                        </div>
