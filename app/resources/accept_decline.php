@@ -8,7 +8,7 @@
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.replace("all_groups.php");
                     } else {
                     alert("Error: " + data);
@@ -34,7 +34,7 @@
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.reload();
                     } else {
                     alert("Error: " + data);

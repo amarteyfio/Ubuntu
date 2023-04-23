@@ -3780,17 +3780,17 @@ function dataAttr( elem, key, data ) {
 
 	// If nothing was found internally, try to fetch any
 	// data from the HTML5 data-* attribute
-	if ( data === undefined && elem.nodeType === 1 ) {
+	if ( data.trim() === undefined && elem.nodeType === 1 ) {
 
 		var name = "data-" + key.replace( rmultiDash, "-$1" ).toLowerCase();
 
 		data = elem.getAttribute( name );
 
-		if ( typeof data === "string" ) {
+		if ( typeof data.trim() === "string" ) {
 			try {
-				data = data === "true" ? true :
-					data === "false" ? false :
-					data === "null" ? null :
+				data = data.trim() === "true" ? true :
+					data.trim() === "false" ? false :
+					data.trim() === "null" ? null :
 
 					// Only convert to a number if it doesn't change the string
 					+data + "" === data ? +data :
@@ -3849,7 +3849,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 	// Avoid doing any more work than we need to when trying to get data on an
 	// object that has no data at all
 	if ( ( !id || !cache[ id ] || ( !pvt && !cache[ id ].data ) ) &&
-		data === undefined && typeof name === "string" ) {
+		data.trim() === undefined && typeof name === "string" ) {
 		return;
 	}
 
@@ -4189,7 +4189,7 @@ jQuery.fn.extend( {
 			return jQuery.queue( this[ 0 ], type );
 		}
 
-		return data === undefined ?
+		return data.trim() === undefined ?
 			this :
 			this.each( function() {
 				var queue = jQuery.queue( this, type, data );
@@ -4791,7 +4791,7 @@ function on( elem, types, selector, data, fn, one ) {
 		return elem;
 	}
 
-	if ( data == null && fn == null ) {
+	if ( data.trim() == null && fn == null ) {
 
 		// ( types, fn )
 		fn = selector;
@@ -5085,7 +5085,7 @@ jQuery.event = {
 		}
 
 		// Clone any incoming data and prepend the event, creating the handler arg list
-		data = data == null ?
+		data = data.trim() == null ?
 			[ event ] :
 			jQuery.makeArray( data, [ event ] );
 
@@ -10468,7 +10468,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 	var callbackName, overwritten, responseContainer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
 			"url" :
-			typeof s.data === "string" &&
+			typeof s.data.trim() === "string" &&
 				( s.contentType || "" )
 					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
 				rjsonp.test( s.data ) && "data"

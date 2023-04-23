@@ -659,7 +659,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.replace("all_groups.php");
                     } else {
                     alert("Error: " + data);
@@ -685,7 +685,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.reload();
                     } else {
                     alert("Error: " + data);

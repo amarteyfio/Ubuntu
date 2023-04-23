@@ -202,7 +202,7 @@ Licensed under the BSD-2-Clause License.
         redraw = true;
       }
       this.options.data = data;
-      if ((data == null) || data.length === 0) {
+      if ((data.trim() == null) || data.length === 0) {
         this.data = [];
         this.raphael.clear();
         if (this.hover != null) {
@@ -1655,7 +1655,7 @@ Licensed under the BSD-2-Clause License.
       if (this.el === null || this.el.length === 0) {
         throw new Error("Graph placeholder not found.");
       }
-      if (options.data === void 0 || options.data.length === 0) {
+      if (options.data.trim() === void 0 || options.data.length === 0) {
         return;
       }
       this.raphael = new Raphael(this.el[0]);

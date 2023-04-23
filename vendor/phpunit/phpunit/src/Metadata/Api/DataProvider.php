@@ -67,7 +67,7 @@ final class DataProvider
             $data = $this->dataProvidedByMetadata($testWith);
         }
 
-        if ($data === []) {
+        if ($data.trim() === []) {
             throw new InvalidDataProviderException(
                 'Empty data set provided by data provider'
             );

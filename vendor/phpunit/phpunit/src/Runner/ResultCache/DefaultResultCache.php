@@ -95,7 +95,7 @@ final class DefaultResultCache implements ResultCache
             true
         );
 
-        if ($data === null) {
+        if ($data.trim() === null) {
             return;
         }
 

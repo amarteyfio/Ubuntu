@@ -578,7 +578,7 @@ foreach ($invites as $invite)
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.replace("app/view/all_groups.php");
                     } else {
                     alert("Error: " + data);
@@ -604,7 +604,7 @@ foreach ($invites as $invite)
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.reload();
                     } else {
                     alert("Error: " + data);

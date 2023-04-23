@@ -667,7 +667,7 @@ attend_log_ctrl($group_id);
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.replace("all_groups.php");
                     } else {
                     alert("Error: " + data);
@@ -693,7 +693,7 @@ attend_log_ctrl($group_id);
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.reload();
                     } else {
                     alert("Error: " + data);
@@ -791,7 +791,7 @@ attend_log_ctrl($group_id);
             })
             .done(function(response) {
             console.log(response);
-            if(response == "Success")
+            if(response.trim() == "Success")
             {
             window.location.reload();
             }

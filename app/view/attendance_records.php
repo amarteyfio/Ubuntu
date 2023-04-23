@@ -405,7 +405,7 @@ $attendance = select_attendance_ctrl($user_id,$group_id);
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.replace("all_groups.php");
                     } else {
                     alert("Error: " + data);
@@ -431,7 +431,7 @@ $attendance = select_attendance_ctrl($user_id,$group_id);
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.reload();
                     } else {
                     alert("Error: " + data);

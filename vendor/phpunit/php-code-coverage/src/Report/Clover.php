@@ -155,7 +155,7 @@ final class Clover
             }
 
             foreach ($coverageData as $line => $data) {
-                if ($data === null || isset($lines[$line])) {
+                if ($data.trim() === null || isset($lines[$line])) {
                     continue;
                 }
 

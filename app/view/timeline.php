@@ -496,7 +496,7 @@ $events = select_group_events_ctrl($group_id);
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.replace("app/view/all_groups.php");
                     } else {
                     alert("Error: " + data);
@@ -522,7 +522,7 @@ $events = select_group_events_ctrl($group_id);
                     data: "token=" + token,
                     success: function(data) {
                     console.log(data);
-                    if (data === "Success") {
+                    if (data.trim() === "Success") {
                     window.location.reload();
                     } else {
                     alert("Error: " + data);

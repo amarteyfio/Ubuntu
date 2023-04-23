@@ -724,7 +724,7 @@ function complete_task(id) {
       data: {id: id},
       success: function(response) {
         // Do something with the response
-        if(response == 'Success')
+        if(response.trim() == 'Success')
         {
           toastr.success('Task Completed');
           setTimeout(function(){
@@ -732,7 +732,7 @@ function complete_task(id) {
             }, 1000);
           
         }
-        else if(response == 'Success-Late')
+        else if(response.trim() == 'Success-Late')
         {
            toastr.warning('Task Completed late');
            // Reload the page after the modal is hidden
