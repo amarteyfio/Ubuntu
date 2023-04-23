@@ -102,7 +102,6 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
     <!--- REPORT STYLING-->
     <style>
 		h1 {
-			text-align: center;
 			color: #401f3e;
 			margin-top: 0;
             border-bottom: 5px solid #e55467;
