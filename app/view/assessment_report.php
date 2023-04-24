@@ -138,7 +138,7 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
 		}
 
 		.report {
-			max-width: 1000px;
+			max-width: 1200px;
 			margin: 0 auto;
 			padding: 1em;
             color: #333;
@@ -436,6 +436,7 @@ $total_assessment_score = $rel_es + $rel_ts + $rel_ms;
                             <p><strong>Group:</strong> <?php echo $group['group_name']; ?></p>
                             <p><strong>Role:</strong> <?php echo select_user_role_ctrl($user_id, $group_id); ?></p>
                             <p><strong>Total Peer Assessment Score:</strong> <?php echo $total_assessment_score; ?>%</p>
+                            <p><strong>Date:</strong> <?php echo date("l, F j, Y"); ?></p>
                             </section>
 
                             <section>

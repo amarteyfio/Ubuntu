@@ -517,7 +517,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                                                 <p class="text-muted m-b-15 f-s-12">This Team member:</p>
                                                 <div class="form-group">
                                                     <br>
-                                                    <label style="color:black">Q1: Attended Meetings on time and Regularly </label>
+                                                    <label style="color:black">Q1: Attended meetings regularly and on time </label>
                                                     <div>
                                                         <label><input type="radio" name="question1" value="1">1</label>
                                                         <label><input type="radio" name="question1" value="2">2</label>
@@ -527,7 +527,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label style="color:black">Q2: Complete assignments/tasks on time </label>
+                                                    <label style="color:black">Q2: Completed assignments/tasks on time </label>
                                                     <div>
                                                         <label><input type="radio" name="question2" value="1">1</label>
                                                         <label><input type="radio" name="question2" value="2">2</label>
@@ -557,7 +557,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label style="color:black">Q5: Presented his work in an appropriate manner </label>
+                                                    <label style="color:black">Q5: Presented his/her work in an appropriate manner </label>
                                                     <div>
                                                         <label><input type="radio" name="question5" value="1">1</label>
                                                         <label><input type="radio" name="question5" value="2">2</label>
@@ -567,7 +567,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label style="color:black">Q6: Contributed Significantly to the overall outcome of the Project </label>
+                                                    <label style="color:black">Q6: Contributed Significantly to the overall outcome of the project </label>
                                                     <div>
                                                         <label><input type="radio" name="question6" value="1">1</label>
                                                         <label><input type="radio" name="question6" value="2">2</label>
@@ -582,7 +582,7 @@ $set_date= '<button type="button" class="btn mb-1 btn-primary" data-toggle="moda
                                                     <textarea class="form-control h-150px" rows="6" id="question7" name="question7" placeholder="eg. Nii Noi's punctuality was great for the team."></textarea> 
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Q8: Did you learn anything new from working with this member?</label>
+                                                    <label>Q8: Did you learn anything new from working with this member? Briefly explain.</label>
                                                     <textarea class="form-control h-150px" rows="6" id="question8" name="question8" placeholder="eg. Ama taught me how to think critically"></textarea> 
                                                 </div>
                                                 <h4 class="form-title"> Section III: Feedback </h4>
