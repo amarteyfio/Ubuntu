@@ -409,7 +409,7 @@ attend_log_ctrl($group_id);
                                 <textarea class="form-control h-150px" rows="6" id="m_desc" name="m_desc" placeholder="Limit - 150 Characters"></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="mr-sm-2">Assigned To:</label>
+                                <label class="mr-sm-2">Meeting Type:</label>
                                 <select class="custom-select mr-sm-2" id="m_type" name="m_type">
                                     <option value="Online">Online</option>
                                     <option value="In-Person">In-Person</option>
